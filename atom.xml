@@ -6,7 +6,7 @@
   <link href="http://afterflowl.github.io/atom.xml" rel="self"/>
   
   <link href="http://afterflowl.github.io/"/>
-  <updated>2022-06-22T12:56:42.449Z</updated>
+  <updated>2022-06-22T13:13:24.221Z</updated>
   <id>http://afterflowl.github.io/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>axios的二次封装</title>
-    <link href="http://afterflowl.github.io/2022/06/15/zai-vue-zhong-dui-axios-jin-xing-er-ci-feng-zhuang/"/>
-    <id>http://afterflowl.github.io/2022/06/15/zai-vue-zhong-dui-axios-jin-xing-er-ci-feng-zhuang/</id>
-    <published>2022-06-15T02:33:18.000Z</published>
-    <updated>2022-06-22T12:56:42.449Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="axios-的二次封装"><a href="#axios-的二次封装" class="headerlink" title="axios 的二次封装"></a>axios 的二次封装</h1><p>&#x2F;&#x2F; 使用 axios 用于对数据的请求<br>import axios from ‘axios’<br>&#x2F;&#x2F; 创建 axios 实例<br>const instance &#x3D; axios.create({<br>baseURL: baseURL + version,<br>timeout: 5000<br>})</p><p>&#x2F;&#x2F; 创建请求的拦截器<br>instance.interceptors.request.use(config &#x3D;&gt; {<br>config.headers[‘Authorization’] &#x3D; localStorage.getItem(‘token’)<br>return config<br>}, error &#x3D;&gt; {<br>return Promise.reject(error)<br>})</p><p>&#x2F;&#x2F; 创建响应的拦截器<br>instance.interceptors.response.use(response &#x3D;&gt; {<br>let res &#x3D; null</p><p>&#x2F;&#x2F; 对相应的数据进行过滤<br>if (response.status &#x3D;&#x3D;&#x3D; 200) {<br>if (response.data &amp;&amp; response.data.err &#x3D;&#x3D;&#x3D; 0) {<br>res &#x3D; response.data.data<br>} else if (response.data.err &#x3D;&#x3D;&#x3D; -1) {<br>return alert(‘token 无效’)<br>}<br>} else {<br>return alert(‘请求失败’)<br>}</p><p>return res<br>}, error &#x3D;&gt; {<br>return Promise.reject(error)<br>})</p><p>export default instance</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;axios-的二次封装&quot;&gt;&lt;a href=&quot;#axios-的二次封装&quot; class=&quot;headerlink&quot; title=&quot;axios 的二次封装&quot;&gt;&lt;/a&gt;axios 的二次封装&lt;/h1&gt;&lt;p&gt;&amp;#x2F;&amp;#x2F; 使用 axios 用于对数据的请求&lt;br&gt;</summary>
-      
-    
-    
-    
-    <category term="进阶" scheme="http://afterflowl.github.io/categories/%E8%BF%9B%E9%98%B6/"/>
-    
-    
-    <category term="axios" scheme="http://afterflowl.github.io/tags/axios/"/>
-    
-  </entry>
   
   <entry>
     <title>简单的loading加载</title>
@@ -113,6 +89,31 @@
   </entry>
   
   <entry>
+    <title>axios的使用及进阶</title>
+    <link href="http://afterflowl.github.io/2022/04/05/axios-feng-zhuang/"/>
+    <id>http://afterflowl.github.io/2022/04/05/axios-feng-zhuang/</id>
+    <published>2022-04-05T02:23:35.000Z</published>
+    <updated>2022-06-24T07:34:36.597Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="axios-的使用及进阶"><a href="#axios-的使用及进阶" class="headerlink" title="axios 的使用及进阶"></a>axios 的使用及进阶</h2><ol><li>src 文件夹下新建 utils，再创建 request.js</li></ol><p><code>npm install axios --save</code></p><ol start="2"><li>使用</li></ol><p>在 main.js 中引入</p><blockquote><p>import Axios from ‘axios’</p><p>Vue.prototype.$axios &#x3D; Axios; &#x2F;&#x2F;便于全局使用</p></blockquote><ol start="3"><li>具体使用</li></ol><p>在 mounted 中使用</p><blockquote><p>&#x2F;&#x2F;get 方法</p><p>this.$axios.get(“<a href="http://iwendas.com&quot;/">http://iwendas.com&quot;</a>)</p><p>.then(response&#x3D;&gt;{</p><p> console.log(response.data)</p><p>}).catch(error&#x3D;&gt;{</p><p> console.log(error)</p><p>})</p></blockquote><blockquote><p>&#x2F;&#x2F;post 方法</p><p>import qs from “querystring” &#x2F;&#x2F;将数据转化为 json 格式</p><p>this.$axios.post(‘url’,qs.stringify({</p><p> user_id:’xxxx’,</p><p> password:’iwend’,</p><p> verification_code:”erf”</p><p>}).then(res &#x3D;&gt;{</p><p> console.log(res.data);</p><p>}).catch(error &#x3D;&gt;{</p><p> console.log(error)</p><p>})</p></blockquote><blockquote><p>&#x2F;&#x2F;非快捷方案</p><p>this.$axios({</p><p> method:’post’,</p><p> url:’&#x2F;user&#x2F;223’,</p><p> data:{</p><p> firstName：‘fis’,</p><p> lastName:’sadask’</p><p>}</p><p>})</p></blockquote><blockquote><p>同时请求两个</p><p>let _this&#x3D;this;</p><p>function getUserAccount() {</p><p> return _this.$axios.get(“url”)</p><p>}</p><p>function getUserPermission() {</p><p> return _this.$axios.get(“url”)</p><p>}</p><p>this.$axios.all([getUserAccount(),getUserPermissions()]).then({</p><p> _this.$axios.spread(function(acct,perms){</p><p> console.log(acct.data,perms.data)</p><p>})</p><p>})</p></blockquote><blockquote><p>全局 axios 配置</p><p>Axios.default.baseURL &#x3D;”url”</p><p>在 main.js 中配置</p><p>import qs from ‘querystring’</p><p>Axios.interceptors.request.use(function(config){</p><p> if(config.method &#x3D;&#x3D;&#x3D; ‘post’){</p><p> config.data &#x3D; qs.stringify(config.data)</p><p>}</p><p> console.log(config);</p><p> return config;</p><p>},function(error) {</p><p> return Promise.reject(error)</p><p>})</p><p>&#x2F;&#x2F;设置响应拦截器</p><p>Axios.interceptors.response.use(function (response){</p><p> reurn response;</p><p>},error &#x3D;&gt;{</p><p> return Promise.reject(error);</p><p>})</p></blockquote><h2 id="axios-封装"><a href="#axios-封装" class="headerlink" title="axios 封装"></a>axios 封装</h2><blockquote><p>import axios from ‘axios’<br>import qs from ‘querystring’<br>var service &#x3D; axios.create({<br>baseURL:process.env.VUE_APP_BASEURL;<br>timeout:5000</p><p>})<br>service.defaults.headers.post[‘Content-Type’]&#x3D;’application&#x2F;x-www-form-urlencooded’;<br>service.defaults.headers.common[‘Authorization’]&#x3D;”AUTH_TOKEN”;<br>&#x2F;&#x2F;token 在vuex<br>service.interceptors.request.use(function(config){<br>   &#x2F;&#x2F;判断post请求增加qs转化<br>   if(config.method &#x3D;&#x3D;&#x3D; ‘post’){<br>       config.data &#x3D; qs.stringify(config.data)<br>       return config;<br>}<br>},error &#x3D;&gt;{<br>      return Promise.reject(error)<br>})</p><p>service.interceptors.response.use(<br>    res &#x3D;&gt; res.status &#x3D;&#x3D;200 ? Promise。reslove(res):Promise.reject(res),<br>    error &#x3D;&gt;{<br>        const {response} &#x3D;error;<br>        if(response{<br>                             errorHandle(response.status,response.data.message);<br>         &#x2F;&#x2F;根据状态码，返回结果<br>         return Promise.reject(response);</p><p>}else{<br>     console.log(“断网了”)<br>     })<br>}<br>)<br>const errorHandle &#x3D; (status,other)&#x3D;&gt;{<br>      switch(status){<br>           case  400:<br>            console.log(“信息校验失败”)；<br>            break;<br>            case  401:<br>            console.log(“认证失败”)；<br>            break;<br>            case  403:<br>            console.log(“token验证失败”)；<br>            break;<br>            case 404::<br>            console.log(“请求的资源失败”);<br>            break;<br>            default:<br>            console.log(“其他错误”)<br>}<br>}<br>export default service</p></blockquote><blockquote><p>&#x2F;&#x2F;api中的调用<br>import service from ‘..&#x2F;utils&#x2F;request’<br>import api from ‘..&#x2F;..&#x2F;api’<br>export default {<br>name:”Home”,<br>&#x2F;&#x2F; mounted(){<br>&#x2F;&#x2F;   sevice.get(“<a href="http://sdasdjk.com&quot;/">http://sdasdjk.com&quot;</a>)<br> &#x2F;&#x2F; .then(res&#x3D;&gt;{<br>  &#x2F;&#x2F;console.log(res.data);<br>  &#x2F;&#x2F;})<br>&#x2F;&#x2F;}<br>async mounted(){<br>   api.banner.bannerData()<br>   .then(res&#x3D;&gt;{<br>   console.log(res.data)<br>   });</p><p>}</p><p>}<br>&#x2F;&#x2F;全局调用api<br>import api from ’.&#x2F;api‘<br>Vue.prototype.$api&#x3D;api;<br>&#x2F;&#x2F;每个页面<br>export default {<br> name:’boom’,<br> mounted(){<br>    this.$api.banner.bannerData().then(res&#x3D;&gt;{<br>         console.log(res.data)<br>    })<br> }<br>}</p></blockquote><p>Unexpected token &lt; 没有请求到数据</p><blockquote><p>封装成api.js   在api文件中<br>&#x2F;&#x2F;base.js<br>export default const base &#x3D;{<br>baseUrl:”<a href="http://iwenwiki.com&quot;/">http://iwenwiki.com&quot;</a>,<br>banner:”api&#x2F;blueberryapi.php”<br>}<br>&#x2F;&#x2F;banner.js<br>import base from ‘.&#x2F;base’<br>import service from ‘..&#x2F;utils&#x2F;http’<br>const  banner &#x3D; {<br> bannerData(){<br> return axios.get(base.baseUrl+base.banner);<br>}<br>export default banner;<br>&#x2F;&#x2F;index.js<br>import banner from ‘.&#x2F;banner’<br>export default {<br>banner<br>}</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;axios-的使用及进阶&quot;&gt;&lt;a href=&quot;#axios-的使用及进阶&quot; class=&quot;headerlink&quot; title=&quot;axios 的使用及进阶&quot;&gt;&lt;/a&gt;axios 的使用及进阶&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;src 文件夹下新建 utils，再创建 req</summary>
+      
+    
+    
+    
+    <category term="进阶" scheme="http://afterflowl.github.io/categories/%E8%BF%9B%E9%98%B6/"/>
+    
+    
+    <category term="axios" scheme="http://afterflowl.github.io/tags/axios/"/>
+    
+  </entry>
+  
+  <entry>
     <title>后台管理系统的一些问题及方法(上)</title>
     <link href="http://afterflowl.github.io/2022/03/22/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-shang/"/>
     <id>http://afterflowl.github.io/2022/03/22/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-shang/</id>
@@ -157,6 +158,30 @@
     
     
     <category term="js" scheme="http://afterflowl.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>axios的简单二次封装</title>
+    <link href="http://afterflowl.github.io/2022/01/15/zai-vue-zhong-dui-axios-jin-xing-er-ci-feng-zhuang/"/>
+    <id>http://afterflowl.github.io/2022/01/15/zai-vue-zhong-dui-axios-jin-xing-er-ci-feng-zhuang/</id>
+    <published>2022-01-14T16:13:28.000Z</published>
+    <updated>2022-06-24T07:30:37.678Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="axios-的二次封装"><a href="#axios-的二次封装" class="headerlink" title="axios 的二次封装"></a>axios 的二次封装</h1><p>&#x2F;&#x2F; 使用 axios 用于对数据的请求<br>import axios from ‘axios’<br>&#x2F;&#x2F; 创建 axios 实例<br>const instance &#x3D; axios.create({<br>baseURL: baseURL + version,<br>timeout: 5000<br>})</p><p>&#x2F;&#x2F; 创建请求的拦截器<br>instance.interceptors.request.use(config &#x3D;&gt; {<br>config.headers[‘Authorization’] &#x3D; localStorage.getItem(‘token’)<br>return config<br>}, error &#x3D;&gt; {<br>return Promise.reject(error)<br>})</p><p>&#x2F;&#x2F; 创建响应的拦截器<br>instance.interceptors.response.use(response &#x3D;&gt; {<br>let res &#x3D; null</p><p>&#x2F;&#x2F; 对相应的数据进行过滤<br>if (response.status &#x3D;&#x3D;&#x3D; 200) {<br>if (response.data &amp;&amp; response.data.err &#x3D;&#x3D;&#x3D; 0) {<br>res &#x3D; response.data.data<br>} else if (response.data.err &#x3D;&#x3D;&#x3D; -1) {<br>return alert(‘token 无效’)<br>}<br>} else {<br>return alert(‘请求失败’)<br>}</p><p>return res<br>}, error &#x3D;&gt; {<br>return Promise.reject(error)<br>})</p><p>export default instance</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;axios-的二次封装&quot;&gt;&lt;a href=&quot;#axios-的二次封装&quot; class=&quot;headerlink&quot; title=&quot;axios 的二次封装&quot;&gt;&lt;/a&gt;axios 的二次封装&lt;/h1&gt;&lt;p&gt;&amp;#x2F;&amp;#x2F; 使用 axios 用于对数据的请求&lt;br&gt;</summary>
+      
+    
+    
+    
+    <category term="普通" scheme="http://afterflowl.github.io/categories/%E6%99%AE%E9%80%9A/"/>
+    
+    
+    <category term="axios" scheme="http://afterflowl.github.io/tags/axios/"/>
     
   </entry>
   

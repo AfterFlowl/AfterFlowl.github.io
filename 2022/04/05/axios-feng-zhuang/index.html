@@ -4,9 +4,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="简单的loading加载, AfterFlowl的博客">
-    <meta name="description" content="简单的 loading 加载这边是通过 svg 生成加载图标，通过 animation 生成动画效果
-123456789101112131415161718192021222324252627282930313233343536373839">
+    <meta name="keywords" content="axios的使用及进阶, AfterFlowl的博客">
+    <meta name="description" content="axios 的使用及进阶
+src 文件夹下新建 utils，再创建 request.js
+
+npm install axios --save
+
+使用
+
+在 main.js 中引入
+
+import Axios from ‘axios’
+Vue">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +29,7 @@
 
     
 
-    <title>简单的loading加载 | AfterFlowl的博客</title>
+    <title>axios的使用及进阶 | AfterFlowl的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/./favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -289,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">简单的loading加载</h1>
+                    <h1 class="description center-align post-title">axios的使用及进阶</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +419,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/svg-animation/">
-                                <span class="chip bg-color">svg animation</span>
+                            <a href="/tags/axios/">
+                                <span class="chip bg-color">axios</span>
                             </a>
                         
                     </div>
@@ -422,8 +431,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
-                                基础
+                            <a href="/categories/%E8%BF%9B%E9%98%B6/" class="post-category">
+                                进阶
                             </a>
                         
                     </div>
@@ -435,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-15
+                    2022-04-05
                 </div>
                 
 
@@ -456,8 +465,106 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="简单的-loading-加载"><a href="#简单的-loading-加载" class="headerlink" title="简单的 loading 加载"></a>简单的 loading 加载</h1><p>这边是通过 svg 生成加载图标，通过 animation 生成动画效果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">        .loading &#123;</span><br><span class="line">            width: 50px;</span><br><span class="line">            height: 50px;</span><br><span class="line">            animation: rotate 2s linear 0s infinite;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .path &#123;</span><br><span class="line">            animation: dash 2s ease-in-out infinite;</span><br><span class="line">            stroke: #00b390;</span><br><span class="line">            stroke-width: 2;</span><br><span class="line">            stroke-dasharray: 90 150;</span><br><span class="line">            stroke-dashoffset: 0;</span><br><span class="line">            stroke-linecap: round;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @keyframes rotate &#123;</span><br><span class="line">            from &#123;</span><br><span class="line">                transform: rotate(0deg);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            to &#123;</span><br><span class="line">                transform: rotate(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @keyframes dash &#123;</span><br><span class="line">            0% &#123;</span><br><span class="line">                stroke-dasharray: 1 150;</span><br><span class="line">                stroke-dashoffset: 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            50% &#123;</span><br><span class="line">                stroke-dasharray: 90 150;</span><br><span class="line">                stroke-dashoffset: -40px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            100% &#123;</span><br><span class="line">                stroke-dasharray: 90 150;</span><br><span class="line">                stroke-dashoffset: -120px;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;svg class=&quot;loading&quot; viewbox=&quot;25 25 50 50&quot;&gt;</span><br><span class="line">        &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;25&quot; class=&quot;path&quot; fill=&quot;none&quot; /&gt;</span><br><span class="line">    &lt;/svg&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+                <h2 id="axios-的使用及进阶"><a href="#axios-的使用及进阶" class="headerlink" title="axios 的使用及进阶"></a>axios 的使用及进阶</h2><ol>
+<li>src 文件夹下新建 utils，再创建 request.js</li>
+</ol>
+<p><code>npm install axios --save</code></p>
+<ol start="2">
+<li>使用</li>
+</ol>
+<p>在 main.js 中引入</p>
+<blockquote>
+<p>import Axios from ‘axios’</p>
+<p>Vue.prototype.$axios &#x3D; Axios; &#x2F;&#x2F;便于全局使用</p>
+</blockquote>
+<ol start="3">
+<li>具体使用</li>
+</ol>
+<p>在 mounted 中使用</p>
+<blockquote>
+<p>&#x2F;&#x2F;get 方法</p>
+<p>this.$axios.get(“<a target="_blank" rel="noopener" href="http://iwendas.com&quot;/">http://iwendas.com&quot;</a>)</p>
+<p>.then(response&#x3D;&gt;{</p>
+<p> console.log(response.data)</p>
+<p>}).catch(error&#x3D;&gt;{</p>
+<p> console.log(error)</p>
+<p>})</p>
+</blockquote>
+<blockquote>
+<p>&#x2F;&#x2F;post 方法</p>
+<p>import qs from “querystring” &#x2F;&#x2F;将数据转化为 json 格式</p>
+<p>this.$axios.post(‘url’,qs.stringify({</p>
+<p> user_id:’xxxx’,</p>
+<p> password:’iwend’,</p>
+<p> verification_code:”erf”</p>
+<p>}).then(res &#x3D;&gt;{</p>
+<p> console.log(res.data);</p>
+<p>}).catch(error &#x3D;&gt;{</p>
+<p> console.log(error)</p>
+<p>})</p>
+</blockquote>
+<blockquote>
+<p>&#x2F;&#x2F;非快捷方案</p>
+<p>this.$axios({</p>
+<p> method:’post’,</p>
+<p> url:’&#x2F;user&#x2F;223’,</p>
+<p> data:{</p>
+<p> firstName：‘fis’,</p>
+<p> lastName:’sadask’</p>
+<p>}</p>
+<p>})</p>
+</blockquote>
+<blockquote>
+<p>同时请求两个</p>
+<p>let _this&#x3D;this;</p>
+<p>function getUserAccount() {</p>
+<p> return _this.$axios.get(“url”)</p>
+<p>}</p>
+<p>function getUserPermission() {</p>
+<p> return _this.$axios.get(“url”)</p>
+<p>}</p>
+<p>this.$axios.all([getUserAccount(),getUserPermissions()]).then({</p>
+<p> _this.$axios.spread(function(acct,perms){</p>
+<p> console.log(acct.data,perms.data)</p>
+<p>})</p>
+<p>})</p>
+</blockquote>
+<blockquote>
+<p>全局 axios 配置</p>
+<p>Axios.default.baseURL &#x3D;”url”</p>
+<p>在 main.js 中配置</p>
+<p>import qs from ‘querystring’</p>
+<p>Axios.interceptors.request.use(function(config){</p>
+<p> if(config.method &#x3D;&#x3D;&#x3D; ‘post’){</p>
+<p> config.data &#x3D; qs.stringify(config.data)</p>
+<p>}</p>
+<p> console.log(config);</p>
+<p> return config;</p>
+<p>},function(error) {</p>
+<p> return Promise.reject(error)</p>
+<p>})</p>
+<p>&#x2F;&#x2F;设置响应拦截器</p>
+<p>Axios.interceptors.response.use(function (response){</p>
+<p> reurn response;</p>
+<p>},error &#x3D;&gt;{</p>
+<p> return Promise.reject(error);</p>
+<p>})</p>
+</blockquote>
+<h2 id="axios-封装"><a href="#axios-封装" class="headerlink" title="axios 封装"></a>axios 封装</h2><blockquote>
+<p>import axios from ‘axios’<br>import qs from ‘querystring’<br>var service &#x3D; axios.create({<br>baseURL:process.env.VUE_APP_BASEURL;<br>timeout:5000</p>
+<p>})<br>service.defaults.headers.post[‘Content-Type’]&#x3D;’application&#x2F;x-www-form-urlencooded’;<br>service.defaults.headers.common[‘Authorization’]&#x3D;”AUTH_TOKEN”;<br>&#x2F;&#x2F;token 在vuex<br>service.interceptors.request.use(function(config){<br>   &#x2F;&#x2F;判断post请求增加qs转化<br>   if(config.method &#x3D;&#x3D;&#x3D; ‘post’){<br>       config.data &#x3D; qs.stringify(config.data)<br>       return config;<br>}<br>},error &#x3D;&gt;{<br>      return Promise.reject(error)<br>})</p>
+<p>service.interceptors.response.use(<br>    res &#x3D;&gt; res.status &#x3D;&#x3D;200 ? Promise。reslove(res):Promise.reject(res),<br>    error &#x3D;&gt;{<br>        const {response} &#x3D;error;<br>        if(response{<br>                             errorHandle(response.status,response.data.message);<br>         &#x2F;&#x2F;根据状态码，返回结果<br>         return Promise.reject(response);</p>
+<p>}else{<br>     console.log(“断网了”)<br>     })<br>}<br>)<br>const errorHandle &#x3D; (status,other)&#x3D;&gt;{<br>      switch(status){<br>           case  400:<br>            console.log(“信息校验失败”)；<br>            break;<br>            case  401:<br>            console.log(“认证失败”)；<br>            break;<br>            case  403:<br>            console.log(“token验证失败”)；<br>            break;<br>            case 404::<br>            console.log(“请求的资源失败”);<br>            break;<br>            default:<br>            console.log(“其他错误”)<br>}<br>}<br>export default service</p>
+</blockquote>
+<blockquote>
+<p>&#x2F;&#x2F;api中的调用<br>import service from ‘..&#x2F;utils&#x2F;request’<br>import api from ‘..&#x2F;..&#x2F;api’<br>export default {<br>name:”Home”,<br>&#x2F;&#x2F; mounted(){<br>&#x2F;&#x2F;   sevice.get(“<a target="_blank" rel="noopener" href="http://sdasdjk.com&quot;/">http://sdasdjk.com&quot;</a>)<br> &#x2F;&#x2F; .then(res&#x3D;&gt;{<br>  &#x2F;&#x2F;console.log(res.data);<br>  &#x2F;&#x2F;})<br>&#x2F;&#x2F;}<br>async mounted(){<br>   api.banner.bannerData()<br>   .then(res&#x3D;&gt;{<br>   console.log(res.data)<br>   });</p>
+<p>}</p>
+<p>}<br>&#x2F;&#x2F;全局调用api<br>import api from ’.&#x2F;api‘<br>Vue.prototype.$api&#x3D;api;<br>&#x2F;&#x2F;每个页面<br>export default {<br> name:’boom’,<br> mounted(){<br>    this.$api.banner.bannerData().then(res&#x3D;&gt;{<br>         console.log(res.data)<br>    })<br> }<br>}</p>
+</blockquote>
+<p>Unexpected token &lt; 没有请求到数据</p>
+<blockquote>
+<p>封装成api.js   在api文件中<br>&#x2F;&#x2F;base.js<br>export default const base &#x3D;{<br>baseUrl:”<a target="_blank" rel="noopener" href="http://iwenwiki.com&quot;/">http://iwenwiki.com&quot;</a>,<br>banner:”api&#x2F;blueberryapi.php”<br>}<br>&#x2F;&#x2F;banner.js<br>import base from ‘.&#x2F;base’<br>import service from ‘..&#x2F;utils&#x2F;http’<br>const  banner &#x3D; {<br> bannerData(){<br> return axios.get(base.baseUrl+base.banner);<br>}<br>export default banner;<br>&#x2F;&#x2F;index.js<br>import banner from ‘.&#x2F;banner’<br>export default {<br>banner<br>}</p>
+</blockquote>
 
                 
             </div>
@@ -472,8 +579,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/svg-animation/">
-                                    <span class="chip bg-color">svg animation</span>
+                                <a href="/tags/axios/">
+                                    <span class="chip bg-color">axios</span>
                                 </a>
                             
                         </div>
@@ -647,18 +754,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/15/jian-dan-de-loading-jia-zai/">
+                <a href="/2022/04/12/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-xia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="简单的loading加载">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="后台管理系统的一些问题及方法(下)">
                         
-                        <span class="card-title">简单的loading加载</span>
+                        <span class="card-title">后台管理系统的一些问题及方法(下)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -668,27 +774,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    基础
+                            <a href="/categories/%E8%BF%9B%E9%98%B6/" class="post-category">
+                                    进阶
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/svg-animation/">
-                        <span class="chip bg-color">svg animation</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -702,13 +807,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/15/fang-dou-he-jie-liu/">
+                <a href="/2022/03/22/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="防抖和节流">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="后台管理系统的一些问题及方法(上)">
                         
-                        <span class="card-title">防抖和节流</span>
+                        <span class="card-title">后台管理系统的一些问题及方法(上)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -719,7 +824,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-22
                             </span>
                         <span class="publish-author">
                             
@@ -736,8 +841,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
