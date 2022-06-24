@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="灵活使用数组排序, AfterFlowl的博客">
-    <meta name="description" content="灵活使用数组排序JavaScript 的数组排序是一个非常常见业务场景
-ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好好看看你对 sort 函数究竟了解多少。
-首先我们来看一下 sort 函数的基本信息
-语法：">
+    <meta name="keywords" content="后台管理系统的一些问题及方法(下), AfterFlowl的博客">
+    <meta name="description" content="后台管理系统的一些问题及方法(下)跨域问题
+工作中最常用的方式是 cors，全称是 Cross Origin Resource Sharing(跨域资源共享）。这种方案前端没有什么工作量，和正常发送请求写法没有区别，工作量在后端。每一次请求">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +20,7 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
 
     
 
-    <title>灵活使用数组排序 | AfterFlowl的博客</title>
+    <title>后台管理系统的一些问题及方法(下) | AfterFlowl的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/./favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -291,12 +289,12 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">灵活使用数组排序</h1>
+                    <h1 class="description center-align post-title">后台管理系统的一些问题及方法(下)</h1>
                 </div>
             </div>
         </div>
@@ -412,8 +410,8 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -437,7 +435,7 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-15
+                    2022-04-12
                 </div>
                 
 
@@ -458,32 +456,105 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="灵活使用数组排序"><a href="#灵活使用数组排序" class="headerlink" title="灵活使用数组排序"></a>灵活使用数组排序</h2><p>JavaScript 的数组排序是一个非常常见业务场景</p>
-<p>ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好好看看你对 sort 函数究竟了解多少。</p>
-<p>首先我们来看一下 sort 函数的基本信息</p>
-<p>语法：<br>arr.sort([compareFunction])<br>参数:<br>compareFunction [可选]<br>用于数组排序规则的比较函数。如果不含有该参数，数组元素按照转换字符串的各个字符的 Unicode 编码顺序进行排序。<br>compareFunction 参数：<br>firstElement 用于比较的第一个元素<br>secondElement 用于比较的第二个元素<br>返回值:<br>排序后的数组，返回的是当前数组。</p>
-<p>我们先来看看各种排序的应用方式</p>
-<h3 id="没有参数的默认排序"><a href="#没有参数的默认排序" class="headerlink" title="没有参数的默认排序"></a>没有参数的默认排序</h3><p>&#x2F;&#x2F; 当没有参数传入时 默认按照数组转成字符串后的结果每一位的 Unicode 编码进行排序<br>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort();<br>console.log(arr); &#x2F;&#x2F; [26, 31, 311, 33, 4, 40, 43, 54]</p>
-<p>&#x2F;&#x2F; 当没有参数传入时 默认按照数组转成字符串后的结果每一位的 Unicode 编码进行排序<br>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort();<br>console.log(arr); &#x2F;&#x2F; [26, 31, 311, 33, 4, 40, 43, 54]</p>
-<h3 id="升序排列"><a href="#升序排列" class="headerlink" title="升序排列"></a>升序排列</h3><p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b) &#x3D;&gt; a - b);<br>console.log(arr); &#x2F;&#x2F; [4, 26, 31, 33, 40, 43, 54, 311]</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b) &#x3D;&gt; a - b);<br>console.log(arr); &#x2F;&#x2F; [4, 26, 31, 33, 40, 43, 54, 311]</p>
-<h3 id="降序排列"><a href="#降序排列" class="headerlink" title="降序排列"></a>降序排列</h3><p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b) &#x3D;&gt; b - a);<br>console.log(arr); &#x2F;&#x2F; [311, 54, 43, 40, 33, 31, 26, 4]</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b) &#x3D;&gt; b - a);<br>console.log(arr); &#x2F;&#x2F; [311, 54, 43, 40, 33, 31, 26, 4]</p>
-<p>好了，看完升序和降序排列以后我们来聊聊排序的规则。<br>如果添加了 compareFunction 那么数组会按该函数的返回值结果进行排序。<br>即 compareFunction(a,b) 表示 a,b 的比较结果，规则如下：<br>如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前；<br>如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。<br>备注： ECMAScript 标准并不保证这一行为，而且也不是所有浏览器都会遵守（例如 Mozilla 在 2003 年之前的版本）；<br>如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。<br>compareFunction(a, b) 必须总是对相同的输入返回相同的比较结果，否则排序的结果将是不确定的。</p>
-<p>了解了以上排序结果以后我们可以使用 sort 方法颠倒数组的顺序(实现类似于 reverse 方法的效果)</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort(() &#x3D;&gt; -1);<br>console.log(arr); &#x2F;&#x2F; [33, 31, 26, 40, 4, 54, 43, 311]</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort(() &#x3D;&gt; -1);<br>console.log(arr); &#x2F;&#x2F; [33, 31, 26, 40, 4, 54, 43, 311]</p>
-<h3 id="随机排序"><a href="#随机排序" class="headerlink" title="随机排序"></a>随机排序</h3><p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b) &#x3D;&gt; Math.random() - 0.5);<br>console.log(arr); &#x2F;&#x2F; 结果为随机排序</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b) &#x3D;&gt; Math.random() - 0.5);<br>console.log(arr); &#x2F;&#x2F; 结果为随机排序</p>
-<h3 id="按照对象指定的属性值进行升序或降序排列"><a href="#按照对象指定的属性值进行升序或降序排列" class="headerlink" title="按照对象指定的属性值进行升序或降序排列"></a>按照对象指定的属性值进行升序或降序排列</h3><p>var arr &#x3D; [{<br>name: ‘zhangsan’,<br>age: 20<br>}, {<br>name: ‘lisi’,<br>age: 15<br>}, {<br>name: ‘wangwu’,<br>age: 17<br>}, {<br>name: ‘zhaoliu’,<br>age: 23<br>}, {<br>name: ‘fengqi’,<br>age: 31<br>}, {<br>name: ‘xiaoming’,<br>age: 11<br>}];</p>
-<p>function sortby(prop, rev &#x3D; true) {<br>&#x2F;&#x2F; prop 属性名<br>&#x2F;&#x2F; rev 升序降序 默认升序<br>return function(a, b) {<br>var val1 &#x3D; a[prop];<br>var val2 &#x3D; b[prop];<br>return rev ? val1 - val2 : val2 - val1;<br>}<br>}</p>
-<p>arr.sort(sortby(‘age’)); &#x2F;&#x2F; 根据 age 进行升序排列<br>arr.sort(sortby(‘age’,false)); &#x2F;&#x2F; 根据 age 进行降序排列</p>
-<p>var arr &#x3D; [{<br>name: ‘zhangsan’,<br>age: 20<br>}, {<br>name: ‘lisi’,<br>age: 15<br>}, {<br>name: ‘wangwu’,<br>age: 17<br>}, {<br>name: ‘zhaoliu’,<br>age: 23<br>}, {<br>name: ‘fengqi’,<br>age: 31<br>}, {<br>name: ‘xiaoming’,<br>age: 11<br>}];</p>
-<p>function sortby(prop, rev &#x3D; true) {<br>&#x2F;&#x2F; prop 属性名<br>&#x2F;&#x2F; rev 升序降序 默认升序<br>return function(a, b) {<br>var val1 &#x3D; a[prop];<br>var val2 &#x3D; b[prop];<br>return rev ? val1 - val2 : val2 - val1;<br>}<br>}</p>
-<p>arr.sort(sortby(‘age’)); &#x2F;&#x2F; 根据 age 进行升序排列<br>arr.sort(sortby(‘age’,false)); &#x2F;&#x2F; 根据 age 进行降序排列</p>
-<h3 id="我们再来看一些特别的排序方式"><a href="#我们再来看一些特别的排序方式" class="headerlink" title="我们再来看一些特别的排序方式"></a>我们再来看一些特别的排序方式</h3><p>先按奇数升序排列,后按偶数升序排列</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b)&#x3D;&gt;{<br>if(!(a % 2) &amp;&amp; b % 2) return 1; &#x2F;&#x2F; 首先满足条件 a 为偶数,b 为奇数<br>if((a % 2 &amp;&amp; b % 2 || !(a % 2) &amp;&amp; !(b % 2)) &amp;&amp; a &gt; b) return 1; &#x2F;&#x2F; 判断 a b 均为奇数或偶数 且 a &gt; b 即可进行升序排序<br>return -1;<br>});<br>console.log(arr); &#x2F;&#x2F; [31, 33, 43, 311, 4, 26, 40, 54]</p>
-<p>let arr &#x3D; [311,43,54,4,40,26,31,33];<br>arr.sort((a,b)&#x3D;&gt;{<br>if(!(a % 2) &amp;&amp; b % 2) return 1; &#x2F;&#x2F; 首先满足条件 a 为偶数,b 为奇数<br>if((a % 2 &amp;&amp; b % 2 || !(a % 2) &amp;&amp; !(b % 2)) &amp;&amp; a &gt; b) return 1; &#x2F;&#x2F; 判断 a b 均为奇数或偶数 且 a &gt; b 即可进行升序排序<br>return -1;<br>});<br>console.log(arr); &#x2F;&#x2F; [31, 33, 43, 311, 4, 26, 40, 54]</p>
+                <h2 id="后台管理系统的一些问题及方法-下"><a href="#后台管理系统的一些问题及方法-下" class="headerlink" title="后台管理系统的一些问题及方法(下)"></a>后台管理系统的一些问题及方法(下)</h2><h3 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h3><ul>
+<li>工作中最常用的方式是 cors，全称是 Cross Origin Resource Sharing(跨域资源共享）。这种方案前端没有什么工作量，和正常发送请求写法没有区别，工作量在后端。每一次请求，浏览器先以 OPTIONS 请求方式发送一个预请求，通过预请求从而获知服务器对跨源请求支持的 HTTP 方法。在确认服务器允许该跨域请求的情况下，再以实际的 http 请求方法发送真正的请求。</li>
+</ul>
+<p>优点:第一次配好后，之后不管有多少接口和项目，复用就可以了，一劳永逸，而且不管是开发环境和正式环境都能方便的使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: https://foo.example</span><br><span class="line">//允许访问的地址</span><br><span class="line">Access-Control-Allow-Methods: POST, GET, OPTIONS</span><br><span class="line">//允许访问的方式</span><br><span class="line">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type</span><br><span class="line">//允许访问的请求头</span><br><span class="line">Access-Control-Max-Age: 86400</span><br><span class="line">//允许访问的最大时间</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>纯前端解决方案（有后端觉得麻烦不想搞）</li>
+</ul>
+<p>在 dev 开发模式下使用 webpack 的 proxy，但是这种方法在生产环境下是不能使用的。在生产环境中需要使用 nginx 进行反向代理。不管是 proxy 和 nginx 的原理都是一样的，通过搭建一个中转服务器来转发请求规避跨域的问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//devServer.proxy</span><br><span class="line">proxy:&#123;</span><br><span class="line">&quot;/api&quot;:&#123;</span><br><span class="line">       target&quot;https://other-server.com   //后端API</span><br><span class="line">       pathRewrite:&#123;&quot;^/api&quot;:&quot;&quot;&#125;   //将/api隐藏</span><br><span class="line">       secure：false</span><br><span class="line">       //默认情况下，不接受运行在https上，且使用了无效证书的后端服务器，如果想要接收，设置如上</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//想要对多个路径进行跨域</span><br><span class="line">proxy:[&#123;</span><br><span class="line">    context:[&quot;/auth&quot;,&quot;/api&quot;],</span><br><span class="line">    target:&quot;http://localhost:3000&quot;</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>开发环境 生产环境</p>
+<p>cors cors</p>
+<p>proxy nginx</p>
+<ul>
+<li>其他的方法不太推荐，例如 jsonp(利用 script 请求资源，但是只能通过 get 方法）等</li>
+</ul>
+<p>###ESLINT</p>
+<p>代码规范，可以很大程度地避免基本语法错误，也保证了代码的可读性</p>
+<p>配置在.eslintrc.js 上面，</p>
+<p>####取消 ESLint 校验</p>
+<p>如果不想要 ESLint 进行校验（不推荐取消），只需要在 vue.config.js 文件中，进行如下设置 lintOnSave:false;</p>
+<h4 id="Vscode-中配置-ESLint"><a href="#Vscode-中配置-ESLint" class="headerlink" title="Vscode 中配置 ESLint"></a>Vscode 中配置 ESLint</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/G0000227/article/details/122093671?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165599450416782389449808%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=165599450416782389449808&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-122093671-null-null.142%5Ev21%5Epc_rank_34,157%5Ev15%5Enew_3&utm_term=%E5%A6%82%E4%BD%95%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEESLint&spm=1018.2226.3001.4187">详细教程</a></p>
+<p>###自动修复</p>
+<p>npm run lint – –fix</p>
+<h3 id="风格指南"><a href="#风格指南" class="headerlink" title="风格指南"></a>风格指南</h3><h4 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h4><p>所有的 Component 文件都是以大写开头（pascalCase），除了 index.vue</p>
+<ul>
+<li><code>@/components/BackToTop/index.vue</code></li>
+<li><code>@/components/Charts/Line.vue</code></li>
+</ul>
+<h4 id="JS-文件"><a href="#JS-文件" class="headerlink" title="JS 文件"></a>JS 文件</h4><p>所有的.js 文件都遵循横线连接(kebab-case)</p>
+<ul>
+<li><code>@/utils/open-window.js</code></li>
+<li><code>@/views/svg-icons/require-icons.js</code></li>
+</ul>
+<h4 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h4><p>在 views 文件下，代表路由的.vue 文件都使用横线连接（kebab-case），代表路由的文件夹也是这种规则</p>
+<ul>
+<li><code>@/views/svg-icons/index.vue</code></li>
+<li><code>@/views/svg-icons/require-icons.js</code></li>
+</ul>
+<p>使用横线连接（kebab-case)来命名 views 主要是出于以下几个考虑</p>
+<ul>
+<li>横线连接（kebab-case)是官方推荐的命名规范之一</li>
+<li>views 的.vue 文件代表的是一个路由，所以需要和 component 进行区分(component 都是大写开头)</li>
+<li>页面的 url 也都是很香连接的，所以路由对应的 view 应该要保持统一，</li>
+<li>没有大小写敏感问题</li>
+</ul>
+<h3 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h3><p>当打包构建应用时，JavaScript 包会变得很大，影响页面加载速度，如果我们把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应的组件，这样就更高效了</p>
+<p>const Foo&#x3D;（）&#x3D;&gt;import(‘.&#x2F;FOO.vue’)</p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p>图表是后台中很常见的需求，我一直使用的都是 ECharts，插件尽量自己用 vue 进行封装。</p>
+<p>首先</p>
+<p>npm install echarts –save</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">全部引入</span><br><span class="line">import * as echarts from ’echarts‘；</span><br><span class="line">基于准备好的dom,初始化echarts实例</span><br><span class="line">var myChart = echarts.init(document.getElementId(&#x27;main&#x27;))</span><br><span class="line">或者是通过ref来引入</span><br><span class="line">var myChart = echarts.init(this.refs.xxxx)</span><br><span class="line">var option;</span><br><span class="line">option=(&#123;</span><br><span class="line">    title:&#123;</span><br><span class="line">    text:&#x27;Echa&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    xAxis;&#123;</span><br><span class="line">    data:[]</span><br><span class="line">    &#125;,</span><br><span class="line">    yAxis:&#123;&#125;</span><br><span class="line">    series:[]</span><br><span class="line">&#125;)</span><br><span class="line">option &amp;&amp; myChart.setOption(option);</span><br></pre></td></tr></table></figure>
+
+<p>data 是远程获取的，或者动态改变 ECharts 配置怎么办</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//第一种  watch  options变化   利用vue的深度watcher，options一有变化就重新setOption</span><br><span class="line">watch:&#123;</span><br><span class="line">   options:&#123;</span><br><span class="line">     handler(options)&#123;</span><br><span class="line">     this.chart.setOption(this,options)</span><br><span class="line">     &#125;,</span><br><span class="line">     deep:true</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">//第二种   只watch数据的变化，只有数据变化时触发Echarts</span><br><span class="line">watch:&#123;</span><br><span class="line">seriesData(val)&#123;</span><br><span class="line">this,setOptions(&#123;series:val&#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最好还是结合业务来进行封装，后面就和使用 Echarts 没有区别了，Echarts 的配置项很多，可以多花点时间了解他的 API</p>
+<h3 id="ECharts-图标宽度显示不准确？"><a href="#ECharts-图标宽度显示不准确？" class="headerlink" title="ECharts 图标宽度显示不准确？"></a>ECharts 图标宽度显示不准确？</h3><p>将 ECharts 放到 el-tab 或者 el-dialog 之中，会发现图标的宽度显示没有那么准确，因为 ECharts 本身不是自适应的，当父级容器的宽度发生变化的时候，我们需要手动调用它的.resize()方法，比如<code>el-tab</code>,你可监听 change 事件，当变化时，找到这个图标并调用它的.resize()方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">      active(val) &#123;</span><br><span class="line">        this.$nextTick(() =&gt; &#123;</span><br><span class="line">          this.$refs.Chart.resize();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>在 el-dialog 之中放图表就比较简单，在 dialog 出现之后 init 图表就可以了</p>
+<h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3><p>一般使用 iconfont.cn 上的图标</p>
+<p>我常用的两种方式：</p>
+<ol>
+<li>将项目用到的图标放到一个项目中，然后下载下来，解压之后，将文件放入到 assest 里面的 font 文件夹里，在 main.js 中引入，</li>
+</ol>
+<p><code>import ‘@/views/font/iconfont.css</code></p>
+<ol start="2">
+<li><p>单独导出 svg 格式</p>
+<p>将下载后的 svg 文件放入到@&#x2F;icons、svg 文件夹下之后就会自动导入</p>
+</li>
+</ol>
+<p>使用方式</p>
+<p><code>&lt;svg-icon icon-class=&quot;password&quot;/&gt; //icon-class为icon的名字</code></p>
+<p>svg-icon 默认读取其父级的 color，你可以改变父级的 color 或者直接改变 fill 的颜色即可</p>
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>你可以通过<code>npm run preview -- --report</code>来分析 webpack 打包之后的结果，观察各个静态资源的大小，你可以发现占用空间最多的是第三方依赖库。如 Vue&#x2F;element-ui&#x2F;ECharts，</p>
+<p>可以通过 CDN 外链的方式引入第三方库。</p>
+<blockquote>
+<p>TIP</p>
+<p>CDN 引入的方式不能减少代码的体积，这是不可能的，虽然打包的 bundle 小了，但是那部分代码只是被拆出去，用 CDN 的方式引入，如果想减小体积，最高效的就是启用 GZIP</p>
+</blockquote>
+<blockquote>
+<p>缺点：</p>
+<p>引入 CDN 引入的方式等于一些第三方的依赖版本是通过 package.json 来控制的，一些依赖需要手动维护，增加了维护成本。</p>
+<p>webpack 已经做了资源的缓存优化，静态资源的缓存已经做的很好了，我们需要将静态资源上传到自己的 CDN 服务，没有必要使用第三方的 CDN 服务</p>
+</blockquote>
+<h3 id="更换主题和国际化"><a href="#更换主题和国际化" class="headerlink" title="更换主题和国际化"></a>更换主题和国际化</h3><p>参考 element-ui 的指南即可</p>
+<p><a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/component/i18n">element-ui</a></p>
+<h3 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h3><h4 id="404"><a href="#404" class="headerlink" title="404"></a>404</h4><p>页面级的错误由 vue-router 统一处理，所有匹配不到正确路由的页面都会进 404 页面</p>
+<blockquote>
+<p>Warning</p>
+<p>404 页面一定要放在最后加载，如果放在 constantRoutes 一同声明了 404，后面 addRoutes 加的路由都会被拦截到 404</p>
+<p>401</p>
+<p>在@&#x2F;permission.js 做了权限控制，没有权限进入该路由的用户会被重定向到 401 页面</p>
+</blockquote>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><p>项目里面所有的请求都会走 request.js 里面创建的 axios 实例，统一做了错误处理，</p>
+<p>我们可以在 service.interceptors.response response 拦截器之中根据自己的实际业务统一针对不同的状态码或者自定义 code 来做错误处理</p>
 
                 
             </div>
@@ -498,8 +569,8 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/js/">
-                                    <span class="chip bg-color">js</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -677,13 +748,13 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/03/15/javascript-yan-ge-mo-shi/">
+                <a href="/2022/06/15/fang-dou-he-jie-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript严格模式">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="防抖和节流">
                         
-                        <span class="card-title">JavaScript严格模式</span>
+                        <span class="card-title">防抖和节流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -694,14 +765,14 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BF%9B%E9%98%B6/" class="post-category">
-                                    进阶
+                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    基础
                                 </a>
                             
                             
@@ -726,13 +797,13 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/02/markdown-shi-yong-jiao-cheng/">
+                <a href="/2022/03/22/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Markdown使用教程">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="后台管理系统的一些问题及方法(上)">
                         
-                        <span class="card-title">Markdown使用教程</span>
+                        <span class="card-title">后台管理系统的一些问题及方法(上)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -743,7 +814,7 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-22
                             </span>
                         <span class="publish-author">
                             
@@ -760,8 +831,8 @@ ECMAScript 为数组提供了一个原生的 sort 函数，今天我们就来好
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>

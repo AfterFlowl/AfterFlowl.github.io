@@ -439,7 +439,7 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-22
+                    2022-03-22
                 </div>
                 
 
@@ -479,7 +479,7 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
 <p>一种是那些不需要动态判断权限的路由，</p>
 <p>一种是那些需要动态判断权限并通过 addRoutes 动态添加的页面，</p>
 <p>这两种路由都使用路由懒加载</p>
-<h2 id="如何实现点击侧边栏刷新当前路由？"><a href="#如何实现点击侧边栏刷新当前路由？" class="headerlink" title="如何实现点击侧边栏刷新当前路由？"></a>如何实现点击侧边栏刷新当前路由？</h2><p>首先添加一个 click 事件，但是因为路由没有改变，所以不会有任何变化，</p>
+<h3 id="如何实现点击侧边栏刷新当前路由？"><a href="#如何实现点击侧边栏刷新当前路由？" class="headerlink" title="如何实现点击侧边栏刷新当前路由？"></a>如何实现点击侧边栏刷新当前路由？</h3><p>首先添加一个 click 事件，但是因为路由没有改变，所以不会有任何变化，</p>
 <p>所以我们可以给路由的 query 上加一个属性，该属性的值为 new Date()当前时间，确保可以重新刷新 view</p>
 <p>ps：同时我们还需要给 router-view 上加上一个:key 属性</p>
 <p>当然如果觉得这样的页面不是很好看，我们还可以点击事件，跳转页面</p>
@@ -737,18 +737,17 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/22/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-shang/">
+                <a href="/2022/04/12/hou-tai-guan-li-xi-tong-de-yi-xie-wen-ti-ji-fang-fa-xia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="后台管理系统的一些问题及方法(上)">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="后台管理系统的一些问题及方法(下)">
                         
-                        <span class="card-title">后台管理系统的一些问题及方法(上)</span>
+                        <span class="card-title">后台管理系统的一些问题及方法(下)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,22 +757,21 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    基础
+                            <a href="/categories/%E8%BF%9B%E9%98%B6/" class="post-category">
+                                    进阶
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -792,13 +790,13 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/15/zai-vue-zhong-dui-axios-jin-xing-er-ci-feng-zhuang/">
+                <a href="/2022/03/15/javascript-yan-ge-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="axios的二次封装">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript严格模式">
                         
-                        <span class="card-title">axios的二次封装</span>
+                        <span class="card-title">JavaScript严格模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -809,7 +807,7 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
                             </span>
                         <span class="publish-author">
                             
@@ -826,8 +824,8 @@ component:()&amp;#x3D;&amp;gt;import(‘admin&amp;#x2F;hello’)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/axios/">
-                        <span class="chip bg-color">axios</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
